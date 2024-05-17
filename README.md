@@ -1,5 +1,7 @@
 #react-2024-05-13
+
 ##Дз1
+
 Создать репозиторий(Публичный) на github
 Создать ветку с названием - lecture-1/hw
 Создать проект(используем vite - https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
