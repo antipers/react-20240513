@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { Restaurant } from "../../restaurant/component";
+import { Restaurant } from "../restaurant/component";
 
 
 export const Restaurants = ({ restaurants }) => {
