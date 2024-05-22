@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const CounterComp = () => {
+export const CounterComp = ({ key }) => {
   const [counter, setCounter] = useState(0);
 
   const decrement = () => {
@@ -17,9 +17,13 @@ export const CounterComp = () => {
 
   return (
     <div>
-      <button onClick={decrement}>-</button>
+      <button key={key} onClick={decrement}>
+        -
+      </button>
       <span>{counter}</span>
-      <button onClick={increment}>+</button>
+      <button key={key} onClick={increment}>
+        +
+      </button>
     </div>
   );
 };
