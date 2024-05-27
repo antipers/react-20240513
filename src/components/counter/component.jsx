@@ -1,4 +1,4 @@
-export const CounterComponent = ({
+export const Counter = ({
   value,
   increment,
   decrement,
