@@ -3,6 +3,7 @@ import { restaurants } from "./constants/mock";
 import { Restaurants } from "./components/restaurants/component";
 import { Footer } from "./components/footer/component";
 import { Header } from "./components/header/component";
+import { ProgressBar } from "./components/progress-bar/component";
 
 export const App = () => {
   if (restaurants.length === 0) {
@@ -11,6 +12,7 @@ export const App = () => {
 
   return (
     <div>
+      <ProgressBar />
       <Header header={"I'm header"} />
 
       <Restaurants restaurants={restaurants} />

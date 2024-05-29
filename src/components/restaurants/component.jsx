@@ -19,6 +19,12 @@ export const Restaurants = ({ restaurants }) => {
       />
 
       <Restaurant restaurant={activeRestaurant} />
+      <Restaurant restaurant={activeRestaurant} />
+      <Restaurant restaurant={activeRestaurant} />
+      <Restaurant restaurant={activeRestaurant} />
+      <Restaurant restaurant={activeRestaurant} />
+      <Restaurant restaurant={activeRestaurant} />
+      <Restaurant restaurant={activeRestaurant} />
     </div>
   );
 };
