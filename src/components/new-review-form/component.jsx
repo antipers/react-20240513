@@ -24,7 +24,7 @@ const DEFAULT_FORM_VALUE = {
 
 export const NewReviewForm = () => {
   const [form, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE);
-  console.log(form);
+  
   return (
     <>
       <div>
@@ -49,10 +49,9 @@ export const NewReviewForm = () => {
       </div>
       <RatingButtons
         value={form.rating}
-        onChange={(event) => {
-          dispatch({ type: "setRating", payload: Number(event.target.value) });
+        onChange={(rating) => {
+          dispatch({ type: "setRating", payload: rating });
         }}
-        isActive={form.rating}
       />
       <button
         onClick={() => {

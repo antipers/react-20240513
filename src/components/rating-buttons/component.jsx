@@ -1,25 +1,17 @@
-import { RatingButton } from "../rating-button/component";
+/* eslint-disable react/jsx-key */
 
-export const RatingButtons = ({
-  countOfNumbers = 6,
-  onChange,
-  value,
-  isActive,
-}) => {
-  let countOfRatingNumbers = [];
-  for (let index = 1; index < countOfNumbers; index++) {
-    countOfRatingNumbers.push(index);
-  }
-
+export const RatingButtons = ({ maxRating = 5, onChange, value }) => {
   return (
     <div>
       <span>Choose your rating:</span>
-      <RatingButton
-        ratingNumbers={countOfRatingNumbers}
-        onClick={onChange}
-        value={value}
-        isActive={isActive}
-      />
+      {new Array(maxRating).fill(null).map((_, index) => (
+        <button
+          onClick={() => onChange(index + 1)}
+          disabled={value === index + 1}
+        >
+          {index + 1}
+        </button>
+      ))}
     </div>
   );
 };

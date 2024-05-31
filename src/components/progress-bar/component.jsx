@@ -1,27 +1,18 @@
-import { useState } from "react";
-import "./styles.css";
+import { useProgressBar } from "../../hooks/use-scroll";
 
 export const ProgressBar = () => {
-  const [width, setWidth] = useState(0);
-
-  function getWidth() {
-    let scrollHeight = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-    );
-
-    let result =
-      (window.scrollY /
-        (scrollHeight - document.documentElement.clientHeight)) *
-      100;
-    setWidth(result);
-  }
-
-  window.addEventListener("scroll", getWidth);
-
-  return <div className="myBar" style={{ width: `${width}%` }}></div>;
+  const width = useProgressBar();
+  return (
+    <div
+      style={{
+        width: `${width}%`,
+        height: "5px",
+        backgroundColor: "cadetblue",
+        position: "sticky",
+        zIndex: "1",
+        top: "0",
+        left: "0",
+      }}
+    ></div>
+  );
 };
