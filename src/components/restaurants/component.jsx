@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+// eslint-disable-next-line no-unused-vars
 import { useProgressBar } from "../../hooks/use-scroll";
 import { RestaurantTabs } from "../restaurant-tabs/component";
 import { Restaurant } from "../restaurant/component";
@@ -13,8 +14,8 @@ export const Restaurants = ({ restaurants }) => {
   const activeRestaurant = restaurants[activeRestaurantIndex];
 
   const ref = useRef(null);
-  const width = useProgressBar(ref);
-  console.log(width);
+  /* const width = useProgressBar(ref);
+  console.log(width); */
 
   if (!restaurants) {
     return <div>Данные не загружены, попробуйте перезагрузить страницу</div>;
