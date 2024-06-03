@@ -16,26 +16,24 @@ export const App = () => {
   const [isLogged, setIsLogged] = useState(false);
   const [user, setUser] = useState(null);
 
-  // let userName;
-  // if (isLogged === false) {
-  //   userName = false;
-  // } else if (isLogged === true) {
-  //   userName = "Denis";
-  // } else if (isLogged === "Logging") {
-  //   userName = "Denis"; /* ИСПРАВИТЬ */
-  // }
-
   return (
     <UserContext.Provider value={user}>
       <ThemeContext.Provider value={context}>
-        <div className={isLogged === "Logging" ? "disabled" : ""}>
+        <div
+          className={isLogged === "Logging" ? "disabled" : ""}
+          onClick={(event) => {
+            if (event.target.closest(".disabled")) {
+              setIsLogged(false);
+            }
+          }}
+        >
           <Header
             header={"I'm header"}
             isLogged={isLogged}
             onChangeEnter={() => setIsLogged("Logging")}
             onChangeQuit={() => setIsLogged(false)}
             onChangeLogging={() => setIsLogged(true)}
-            onOn={(userName) => setUser(userName)}
+            onChangeSuccess={(userName) => setUser(userName)}
             onChangeLogOut={() => setUser(false)}
           />
           <SwitchThemeButton

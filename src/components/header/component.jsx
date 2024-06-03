@@ -9,7 +9,7 @@ export const Header = ({
   onChangeQuit,
   onChangeLogging,
   isLogged,
-  onOn,
+  onChangeSuccess,
   onChangeLogOut
 }) => {
   const isLoggedRender = useContext(UserContext);
@@ -31,7 +31,7 @@ export const Header = ({
           <Modal
             onChange={onChangeLogging}
             onChangeCancel={onChangeQuit}
-            onInput={(userName) => onOn(userName)}
+            onInput={(userName) => onChangeSuccess(userName)}
           />{" "}
         </div>
       ) : null}
