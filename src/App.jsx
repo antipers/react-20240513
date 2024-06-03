@@ -13,22 +13,32 @@ import { useState } from "react";
 export const App = () => {
   const { theme, newTheme, context } = useTheme();
   const [isLogged, setIsLogged] = useState(false);
+  const [user, setUser] = useState(null);
   
 
-  let userSample;
-  if (!isLogged) {
-    userSample = false;
-  } else {
-    userSample = "Denis";
-  }
+  // let userName;
+  // if (isLogged === false) {
+  //   userName = false;
+  // } else if (isLogged === true) {
+  //   userName = "Denis";
+  // } else if (isLogged === "Logging") {
+  //   userName = "Denis"; /* ИСПРАВИТЬ */
+  // }
 
   return (
-    <UserContext.Provider value={userSample}>
+    <UserContext.Provider value={user}>
       <ThemeContext.Provider value={context}>
-        <div>
+        <div aria-disabled={isLogged === "Logging"}>
+          {" "}
+          {/* Не работает */}
           <Header
             header={"I'm header"}
-            onChange={() => setIsLogged(!isLogged)}
+            isLogged={isLogged}
+            onChangeEnter={() => setIsLogged("Logging")}
+            onChangeQuit={() => setIsLogged(false)}
+            onChangeLogging={() => setIsLogged(true)}
+            onOn={(userName) => setUser(userName)}
+            onChangeLogOut={() => setUser(false)}
           />
           <SwitchThemeButton
             onChange={() => {

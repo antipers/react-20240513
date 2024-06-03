@@ -5,9 +5,7 @@ import { RestaurantTabs } from "../restaurant-tabs/component";
 import { Restaurant } from "../restaurant/component";
 import { useState } from "react";
 
-
 import { useRef } from "react";
-
 
 export const Restaurants = ({ restaurants }) => {
   const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0);
@@ -28,12 +26,6 @@ export const Restaurants = ({ restaurants }) => {
         activeTabIndex={activeRestaurantIndex}
       />
 
-      <Restaurant restaurant={activeRestaurant} />
-      <Restaurant restaurant={activeRestaurant} />
-      <Restaurant restaurant={activeRestaurant} />
-      <Restaurant restaurant={activeRestaurant} />
-      <Restaurant restaurant={activeRestaurant} />
-      <Restaurant restaurant={activeRestaurant} />
       <Restaurant restaurant={activeRestaurant} />
     </div>
   );
