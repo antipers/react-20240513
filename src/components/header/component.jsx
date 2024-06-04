@@ -1,17 +1,8 @@
 import { ProgressBar } from "../progress-bar/component";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user";
-import { Modal } from "../../modal/component";
 
-export const Header = ({
-  header,
-  onChangeEnter,
-  onChangeQuit,
-  onChangeLogging,
-  isLogged,
-  onOn,
-  onChangeLogOut
-}) => {
+export const Header = ({ header, onChange }) => {
   const isLoggedRender = useContext(UserContext);
   console.log(isLoggedRender);
   return (
@@ -20,21 +11,11 @@ export const Header = ({
       {isLoggedRender ? (
         <>
           <span>Hello, {isLoggedRender}</span>
-          <button onClick={onChangeLogOut}>{"LogOut"}</button>
+          <button onClick={onChange}>{"LogOut"}</button>
         </>
       ) : (
-        <button onClick={onChangeEnter}>{"LogIn"}</button>
+        <button onClick={onChange}>{"LogIn"}</button>
       )}
-      {isLogged === "Logging" ? (
-        <div>
-          {" "}
-          <Modal
-            onChange={onChangeLogging}
-            onChangeCancel={onChangeQuit}
-            onInput={(userName) => onOn(userName)}
-          />{" "}
-        </div>
-      ) : null}
 
       {header}
     </header>
