@@ -9,12 +9,12 @@ import { ThemeContext } from "./contexts/theme";
 import { useTheme } from "./hooks/use-theme";
 import { UserContext } from "./contexts/user";
 import { useState } from "react";
-import "./styles/disabled.css";
 
 export const App = () => {
   const { theme, newTheme, context } = useTheme();
   const [isLogged, setIsLogged] = useState(false);
   const [user, setUser] = useState(null);
+  
 
   // let userName;
   // if (isLogged === false) {
@@ -28,7 +28,9 @@ export const App = () => {
   return (
     <UserContext.Provider value={user}>
       <ThemeContext.Provider value={context}>
-        <div className={isLogged === "Logging" ? "disabled" : ""}>
+        <div aria-disabled={isLogged === "Logging"}>
+          {" "}
+          {/* Не работает */}
           <Header
             header={"I'm header"}
             isLogged={isLogged}

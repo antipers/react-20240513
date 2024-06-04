@@ -13,7 +13,7 @@ export const Header = ({
   onChangeLogOut
 }) => {
   const isLoggedRender = useContext(UserContext);
-  
+  console.log(isLoggedRender);
   return (
     <header>
       <ProgressBar />
