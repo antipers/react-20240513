@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { RatingButtons } from "../rating-buttons/component";
+import { Button } from "../button/component";
 
 function reducer(state, { type, payload } = {}) {
   switch (type) {
@@ -53,14 +54,14 @@ export const NewReviewForm = () => {
           dispatch({ type: "setRating", payload: rating });
         }}
       />
-      <button
+      <Button
         onClick={() => {
           dispatch({ type: "setSave" });
         }}
       >
         {" "}
         Save
-      </button>
+      </Button>
     </>
   );
 };
