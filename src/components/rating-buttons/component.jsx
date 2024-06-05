@@ -10,6 +10,7 @@ export const RatingButtons = ({ maxRating = 5, onChange, value }) => {
         <Button
           onClick={() => onChange(index + 1)}
           disabled={value === index + 1}
+          type="rating"
         >
           {index + 1}
         </Button>
