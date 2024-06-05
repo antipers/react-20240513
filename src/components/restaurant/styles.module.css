@@ -3,9 +3,3 @@
   flex-direction: column;
   margin-left: 10px;
 }
-
-.dish {
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
