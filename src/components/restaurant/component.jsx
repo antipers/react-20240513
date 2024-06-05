@@ -1,7 +1,7 @@
 import { Menu } from "../menu/component";
 import { NewReviewForm } from "../new-review-form/component";
 import { Reviews } from "../reviews/component";
-
+import styles from "./styles.module.css";
 export const Restaurant = ({ restaurant }) => {
   if (!restaurant) {
     return <div>Данные не загружены, попробуйте перезагрузить страницу</div>;
@@ -17,7 +17,7 @@ export const Restaurant = ({ restaurant }) => {
     );
   }
   return (
-    <div>
+    <div className={styles.root}>
       <h2>{name}</h2>
       <h3>Меню</h3>
       {/* 
@@ -33,7 +33,7 @@ export const Restaurant = ({ restaurant }) => {
       <Reviews reviews={reviews} />
 
       <h3>Оставить новый отзыв</h3>
-      <NewReviewForm/>
+      <NewReviewForm />
     </div>
   );
 };
