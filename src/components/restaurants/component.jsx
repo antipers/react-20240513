@@ -4,21 +4,22 @@ import { RestaurantTabs } from "../restaurant-tabs/component";
 import { Restaurant } from "../restaurant/component";
 import { useState } from "react";
 
-export const Restaurants = ({ restaurants }) => {
-  const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0);
-  const activeRestaurant = restaurants[activeRestaurantIndex];
+export const Restaurants = ({ restaurantIds }) => {
+  const [activeRestaurantId, setActiveRestaurantId] = useState(
+    "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2"
+  );
 
-  if (!restaurants) {
+  if (!restaurantIds) {
     return <div>Данные не загружены, попробуйте перезагрузить страницу</div>;
   }
   return (
     <div>
       <RestaurantTabs
-        restaurants={restaurants}
-        onTabClick={setActiveRestaurantIndex}
-        activeTabIndex={activeRestaurantIndex}
+        restaurantIds={restaurantIds}
+        onTabClick={setActiveRestaurantId}
+        activeTabId={activeRestaurantId}
       />
-      <Restaurant restaurant={activeRestaurant} />
+      <Restaurant restaurantId={activeRestaurantId} />
     </div>
   );
 };

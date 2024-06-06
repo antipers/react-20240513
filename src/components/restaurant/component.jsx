@@ -2,7 +2,13 @@ import { Menu } from "../menu/component";
 import { NewReviewForm } from "../new-review-form/component";
 import { Reviews } from "../reviews/component";
 import styles from "./styles.module.css";
-export const Restaurant = ({ restaurant }) => {
+import { useSelector } from "react-redux";
+
+export const Restaurant = ({ restaurantId }) => {
+  const restaurant = useSelector(
+    (state) => state.restaurant.entities[restaurantId]
+  );
+
   if (!restaurant) {
     return <div>Данные не загружены, попробуйте перезагрузить страницу</div>;
   }
@@ -27,10 +33,10 @@ export const Restaurant = ({ restaurant }) => {
        {!!menu?.length && <Menu menu={menu} />} 
 
       */}
-      <Menu menu={menu} />
+      <Menu menuIds={menu} />
       <h3>Отзывы</h3>
       {/* {!!reviews?.length && <Reviews reviews={reviews} />} */}
-      <Reviews reviews={reviews} />
+      <Reviews reviewsIds={reviews} />
 
       <h3>Оставить новый отзыв</h3>
       <NewReviewForm />

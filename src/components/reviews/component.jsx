@@ -1,15 +1,17 @@
 /* eslint-disable react/jsx-key */
+import { useSelector } from "react-redux";
 import { Review } from "../review/component";
 
-export const Reviews = ({ reviews }) => {
-  if (!reviews) {
+export const Reviews = ({ reviewsIds }) => {
+  const reviews = useSelector((state) => state.review.entities);
+  if (!reviewsIds) {
     return "Отзывы в процессе модерации";
   }
   return (
     <ul>
-      {reviews.map((r) => (
+      {reviewsIds.map((reviewId) => (
         <li>
-          <Review review={r.text} />
+          <Review reviewText={reviews[reviewId].text} />
         </li>
       ))}
     </ul>

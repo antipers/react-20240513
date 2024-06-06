@@ -1,5 +1,3 @@
-export const Review = ({ review }) => {
-    return (
-        <span>{review}</span>
-    )
-}
+export const Review = ({ reviewText }) => {
+  return <span>{reviewText}</span>;
+};
