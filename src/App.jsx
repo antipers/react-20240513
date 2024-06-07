@@ -13,7 +13,7 @@ export const App = () => {
       <ThemeContextProvider>
         <UserContextProvider>
           <Layout>
-            <Restaurants restaurantIds={store.getState().restaurant.ids} />
+            <Restaurants />
           </Layout>
         </UserContextProvider>
       </ThemeContextProvider>

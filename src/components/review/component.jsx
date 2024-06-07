@@ -1,5 +1,11 @@
+import { UsersContainer } from "../users/container";
 import styles from "./styles.module.css";
 
-export const Review = ({ reviewText }) => {
-  return <span className={styles.root}>{reviewText}</span>;
+export const Review = ({ review }) => {
+  return (
+    <>
+      <span className={styles.root}>{review.text}</span>;
+      <UsersContainer id={review.userId} />
+    </>
+  );
 };

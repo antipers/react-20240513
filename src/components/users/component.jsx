@@ -1,12 +1,9 @@
-import { useSelector } from "react-redux";
 import styles from "./styles.module.css";
 
-export const Users = ({ usersIds }) => {
-  const users = useSelector((state) => state.user.entities);
-
+export const Users = ({ users }) => {
   return (
     <div className={styles.root}>
-      <span>{users[usersIds].name}</span>
+      <span>{users.name}</span>
     </div>
   );
 };

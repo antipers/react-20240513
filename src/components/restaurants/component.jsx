@@ -1,25 +1,22 @@
 /* eslint-disable react/jsx-key */
 // eslint-disable-next-line no-unused-vars
-import { RestaurantTabs } from "../restaurant-tabs/component";
-import { Restaurant } from "../restaurant/component";
-import { useState } from "react";
 
-export const Restaurants = ({ restaurantIds }) => {
+import { useState } from "react";
+import { RestaurantTabsContainer } from "../restaurant-tabs/container";
+import { RestaurantContainer } from "../restaurant/container";
+
+export const Restaurants = () => {
   const [activeRestaurantId, setActiveRestaurantId] = useState(
     "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2"
   );
 
-  if (!restaurantIds) {
-    return <div>Данные не загружены, попробуйте перезагрузить страницу</div>;
-  }
   return (
     <div>
-      <RestaurantTabs
-        restaurantIds={restaurantIds}
+      <RestaurantTabsContainer
         onTabClick={setActiveRestaurantId}
-        activeTabId={activeRestaurantId}
+        activeRestaurantId={activeRestaurantId}
       />
-      <Restaurant restaurantId={activeRestaurantId} />
+      {activeRestaurantId && <RestaurantContainer id={activeRestaurantId} />}
     </div>
   );
 };
