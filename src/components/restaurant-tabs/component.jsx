@@ -1,15 +1,21 @@
 /* eslint-disable react/jsx-key */
 
-import { Tab } from "../tab/component";
+import { RestaurantTabContainer } from "../restaurant-tab/container";
 
-export const RestaurantTabs = ({ restaurants, onTabClick, activeTabIndex }) => {
+export const RestaurantTabs = ({
+  restaurantIds,
+  onTabClick,
+  activeRestaurantId,
+}) => {
   return (
     <div>
-      {restaurants.map(({ name }, index) => (
-        <Tab
-          title={name}
-          onClick={() => onTabClick(index)}
-          isActive={activeTabIndex === index}
+      {restaurantIds.map((id) => (
+        <RestaurantTabContainer
+          id={id}
+          onClick={() => {
+            onTabClick(id);
+          }}
+          isActive={activeRestaurantId === id}
         />
       ))}
     </div>

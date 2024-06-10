@@ -1,15 +1,17 @@
 /* eslint-disable react/jsx-key */
-import { Review } from "../review/component";
+/* import { Users } from "../users/component"; */
+import { ReviewContainer } from "../review/container";
 
-export const Reviews = ({ reviews }) => {
-  if (!reviews) {
+export const Reviews = ({ reviewsIds }) => {
+  if (!reviewsIds) {
     return "Отзывы в процессе модерации";
   }
+
   return (
     <ul>
-      {reviews.map((r) => (
+      {reviewsIds.map((id) => (
         <li>
-          <Review review={r.text} />
+          <ReviewContainer id={id} />
         </li>
       ))}
     </ul>
