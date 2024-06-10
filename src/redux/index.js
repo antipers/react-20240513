@@ -13,6 +13,7 @@ export const store = configureStore({
     UserSlice,
     cartSlice
   ),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 console.log("store", store.getState()); /* Оставил для себя */

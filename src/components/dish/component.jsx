@@ -3,10 +3,13 @@ import { Counter } from "../counter/component";
 export const Dish = ({
   dish,
   className,
-  count,
-  HandleDecrement,
   HandleIncrement,
+  HandleDecrement,
+  count,
 }) => {
+  if (!dish) {
+    return <div>Данные загружаются</div>;
+  }
   return (
     <div className={className}>
       <span>{dish.name}</span>
