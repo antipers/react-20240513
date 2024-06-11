@@ -1,6 +1,6 @@
 import { MenuContainer } from "../menu/container";
 import { NewReviewForm } from "../new-review-form/component";
-import { Reviews } from "../reviews/component";
+import { ReviewsContainer } from "../reviews/container";
 import styles from "./styles.module.css";
 
 export const Restaurant = ({ restaurant }) => {
@@ -12,7 +12,7 @@ export const Restaurant = ({ restaurant }) => {
       <MenuContainer restaurantId={id} />
       <h3>Отзывы</h3>
 
-      <Reviews reviewsIds={restaurant.reviews} />
+      <ReviewsContainer restaurantId={id} />
 
       <h3>Оставить новый отзыв</h3>
       <NewReviewForm />

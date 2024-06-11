@@ -7,6 +7,6 @@ export const DishSlice = createSlice({
   initialState: entityAdapter.getInitialState(),
   extraReducers: (builder) =>
     builder.addCase(getDishesByRestaurantId.fulfilled, (state, { payload }) => {
-      entityAdapter.addMany(state, payload);
+      entityAdapter.setMany(state, payload);
     }),
 });
