@@ -4,27 +4,20 @@
 import { useState } from "react";
 import { RestaurantTabsContainer } from "../restaurant-tabs/container";
 import { RestaurantContainer } from "../restaurant/container";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getRestaurants } from "../../redux/entities/restaurant/thunks/get-restaurants";
-import { useSelector } from "react-redux";
-import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors";
-import { getUsers } from "../../redux/entities/user/thunks/get-users";
+
+/* import { useEffect } from "react"; */
+/* import { useSelector } from "react-redux";
+import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors"; */
 
 export const Restaurants = () => {
-  const restaurantIds = useSelector(selectRestaurantIds);
+  /* const restaurantIds = useSelector(selectRestaurantIds); */ /* Сделать с квери ??? */
   const [activeRestaurantId, setActiveRestaurantId] = useState();
-  const dispatch = useDispatch();
 
-  useEffect(() => dispatch(getRestaurants()), [dispatch]);
-
-  useEffect(() => {
-    if (!activeRestaurantId && restaurantIds?.length) {
-      setActiveRestaurantId(restaurantIds[0]);
+  /*  useEffect(() => {
+    if (!activeRestaurant && restaurantIds?.length) {
+      setActiveRestaurant(restaurantIds[0]);
     }
-  }, [activeRestaurantId, restaurantIds]);
-
-  useEffect(() => dispatch(getUsers()), [dispatch]);
+  }, [activeRestaurant, restaurantIds]); */
 
   return (
     <div>
