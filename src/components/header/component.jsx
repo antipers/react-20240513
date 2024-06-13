@@ -4,6 +4,7 @@ import { ProgressBar } from "../progress-bar/component";
 import { ThemeToggler } from "../theme-toggler/component";
 
 import styles from "./styles.module.css";
+import { CartIndicatorContainer } from "../cart-indicator/container";
 
 export const Header = ({ header }) => {
   return (
@@ -12,6 +13,7 @@ export const Header = ({ header }) => {
       <ThemeToggler />
       <AuthorizationButton />
       {header}
+      <CartIndicatorContainer />
     </header>
   );
 };

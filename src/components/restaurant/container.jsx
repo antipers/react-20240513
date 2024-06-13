@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 
 export const RestaurantContainer = ({ id }) => {
   const restaurant = useSelector((state) => selectRestaurantById(state, id));
-if (!restaurant) {
-    return <div>No restaurant</div>
-}
+
+  if (!restaurant) {
+    return <div>No restaurant</div>;
+  }
   return <Restaurant restaurant={restaurant} />;
 };
- 

@@ -1,14 +1,24 @@
-import { useCount } from "../../hooks/use-count";
 import { Counter } from "../counter/component";
 
-export const Dish = ({ dish, className }) => {
-  const { counter, increment, decrement } = useCount();
-
+export const Dish = ({
+  dish,
+  className,
+  HandleIncrement,
+  HandleDecrement,
+  count,
+}) => {
+  if (!dish) {
+    return <div>Данные загружаются</div>;
+  }
   return (
     <div className={className}>
       <span>{dish.name}</span>
-      <Counter value={counter} increment={increment} decrement={decrement} />
-      <span>{dish.price * counter}</span>
+      <Counter
+        value={count}
+        increment={HandleIncrement}
+        decrement={HandleDecrement}
+      />
+      <span>{dish.price * count}</span>
     </div>
   );
 };

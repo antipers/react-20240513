@@ -1,18 +1,23 @@
 /* eslint-disable react/jsx-key */
-
 import styles from "./styles.module.css";
 import { DishContainer } from "../dish/container";
 
-export const Menu = ({ dishIds }) => {
-  if (!dishIds) {
+export const Menu = ({ restaurantId, dishIds }) => {
+  if (!restaurantId) {
     return "В данный момент ресторан вносит изменения в меню, загляните позже";
   }
 
   return (
-    <div className={styles.root}>
-      {dishIds.map((id) => (
-        <DishContainer id={id} className={styles.dish} />
+    <>
+      {dishIds.map((dishId) => (
+        <div className={styles.root}>
+          <DishContainer
+            dishId={dishId}
+            className={styles.dish}
+            restaurantId={restaurantId}
+          />
+        </div>
       ))}
-    </div>
+    </>
   );
 };
