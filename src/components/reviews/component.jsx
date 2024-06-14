@@ -5,7 +5,7 @@ import { ReviewContainer } from "../review/container";
 
 export const Reviews = ({ restaurantId }) => {
 
-  const {data: reviews, isFetching}= useGetReviewsByRestaurantIdQuery(restaurantId)
+  const {data: reviews, isFetching}= useGetReviewsByRestaurantIdQuery(restaurantId);
   if (isFetching) {
     return  <div>Loading...</div>
   }
