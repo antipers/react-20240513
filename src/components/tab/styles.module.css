@@ -1,0 +1,14 @@
+.root {
+  text-decoration: none;
+  color: black;
+  margin: 3px;
+  border: 5px;
+  border-color: black;
+  padding: 2px;
+  
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+} 
