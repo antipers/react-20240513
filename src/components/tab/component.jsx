@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import styles from "./styles.module.css";
-export const Tab = ({ title, to }) => {
+export const Tab = ({ title, to, }) => {
   return (
     <NavLink
       to={to}

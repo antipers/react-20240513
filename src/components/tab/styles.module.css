@@ -5,10 +5,10 @@
   border: 5px;
   border-color: black;
   padding: 2px;
-  
 }
 
 .disabled {
-  opacity: 0.5;
   pointer-events: none;
-} 
+  color: darkmagenta;
+  font-weight: 900;
+}

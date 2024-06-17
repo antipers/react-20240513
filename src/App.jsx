@@ -10,6 +10,8 @@ import { RestaurantContainer } from "./components/restaurant/container";
 
 import { MenuPage } from "./pages/menu-pages";
 import { ReviewPage } from "./pages/review-page";
+import { DishPage } from "./pages/dish-page";
+import { DishInfoPage } from "./pages/dish-info-page";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,11 @@ const router = createBrowserRouter([
             ],
           },
         ],
+      },
+      {
+        path: "dish",
+        element: <DishPage />,
+        children: [{ path: ":dishId", element: <DishInfoPage /> }],
       },
     ],
   },

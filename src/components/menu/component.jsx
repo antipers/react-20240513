@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 export const Menu = () => {
   const {restaurantId}= useParams();
   
-  
   if (!restaurantId) {
     return "В данный момент ресторан вносит изменения в меню, загляните позже";
   }
