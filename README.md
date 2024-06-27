@@ -1,5 +1,11 @@
 ## Сервис выбора ресторана и заказа еды на React
 
+## branch 7 - реализация с помощью reduxToolkit
+
+## branch 8 - реализация с помощью RTK Query
+
+## branch 9 - реализация с react router
+
 # react-2024-05-13
 
 ## Дз1
